@@ -1,5 +1,5 @@
 model:
-  path: artifacts/train/20260615_142404/best-smile.pt
+  path: artifacts/train/20260616_010059/best-smile.pt
   batch_size: 32
   threshold: 0.5
 
