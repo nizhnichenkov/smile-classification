@@ -1,0 +1,29 @@
+# pyproject.toml is the standard Python project configuration file
+#   that defines your project's metadata, Python version requirements,
+#   dependencies, and build settings, making installation, packaging,
+#   and reproducible environments much easier across different machines and tools.
+
+# tells python how to build this
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+# project data
+[project]
+name = "smile-classification"
+version = "0.1.0"
+requires-python = "==3.10.*"
+
+# Python packages
+dependencies = [
+    "numpy==1.23.0",
+    "pandas==1.5.0",
+    "pillow==12.1.0",
+    "PyYAML==6.0.3",
+    "scikit-learn==1.7.2",
+    "torch==2.10.0",
+    "torchvision==0.25.0",
+    "fastapi==0.137.1",
+    "python-multipart==0.0.32",
+    "uvicorn==0.49.0"
+]

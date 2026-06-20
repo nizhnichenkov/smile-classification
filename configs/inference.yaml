@@ -1,0 +1,16 @@
+model:
+  path: artifacts/train/20260615_142404/best-smile.pt
+  batch_size: 32
+  threshold: 0.5
+
+
+reproducibility:
+  random_state: 1
+
+
+dataset:
+  data_dir: data/test
+  attributes_file: data/celeba_attr.csv
+  name_column: image_id
+  target_column: Smiling
+

@@ -1,0 +1,5 @@
+model_path: artifacts/train/20260616_010059/best-smile.pt
+
+threshold: 0.5
+
+log_file: deploy.log

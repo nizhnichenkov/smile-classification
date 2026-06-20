@@ -1,0 +1,13 @@
+FROM python:3.10.19-slim
+
+WORKDIR /app
+
+COPY . .
+
+RUN pip install --no-cache-dir .
+
+# we use "--port" "8000" to state internally the container is listening on port 8000
+# --host 0.0.0.0 tells Uvicorn to accept connections from outside the container,
+#   allowing Docker port mappings (e.g. -p 8000:8000) to reach the FastAPI app.
+#   0.0.0.0 means to listen on all available network interfaces
+CMD ["uvicorn", "src.api.app:app", "--host", "0.0.0.0", "--port", "8000"]

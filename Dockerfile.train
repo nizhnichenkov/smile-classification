@@ -1,0 +1,23 @@
+# start with an existing Docker image
+# that alread has Python 3.10.19 installed
+# slim - smaller version of Debian Linux with less packages
+# flow: (0) Empty Container --> (1) Install Linux + Python 3.10.19
+FROM python:3.10.19-slim
+
+# set current working directory inside the container to /app
+# equivalent to `cd /app` - all future commands run from there
+WORKDIR /app
+
+# copy everything from project directory on local machine into /app inside container
+# first . means current folder on local machine
+# second . means current folder inside container (i.e., /app)
+COPY . . 
+
+# execute this command while building image
+# Python will look for pyproject.toml to install dependencies
+# --no-cache-dir will not save downloaded packages caches
+# . means to install the project in the current directory (/app)
+RUN pip install --no-cache-dir .
+
+# when container starts, run `python train.py`
+CMD ["python", "train.py"]
