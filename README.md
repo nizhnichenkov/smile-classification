@@ -3,9 +3,9 @@ This repository contains code that does training, inferencing, and deployment of
 
 ## Notes & Requirements
 - [Requirement] This repository only needs an installation of [Docker](https://www.docker.com/) on local machine - rest is done in a container.
-- [Requirement] Dataset images (CelebA) and attributes CSV downloaded from https://www.kaggle.com/datasets/jessicali9530/celeba-dataset.
-    - Put images under `/data/images/`
-    - NOTE: This is only if you want to run either `train` or `inference` pipelines; for `deploy` is not necessary.
+- [Requirement] If you want to run the training pipeline (`./train.py`, train a CNN model from scratch) you need the training image data
+    - Download and unzip image data from https://www.kaggle.com/datasets/jessicali9530/celeba-dataset into `/data/images/` (create folder if not exists); then build and run `Dockerfile.train` accordingly (shown below).
+    - NOTE: This is only if you want to run `train` pipelines; for `inference` and `deploy` is not necessary.
 - Python version used: `3.10.19`
 - Project metadata and dependencies in `pyproject.toml`
     - `Docker build` will install these when creating an image.
